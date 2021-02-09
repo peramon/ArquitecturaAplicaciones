@@ -4,7 +4,7 @@ public class Docente {
     private String nombres;
     public String cedula;
     private String celular;
-    private String correr;
+    private String correo;
     private String password;
     private String provincia;
     private String telefono;
@@ -37,12 +37,12 @@ public class Docente {
         this.celular = celular;
     }
 
-    public String getCorrer() {
-        return correr;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setCorrer(String correr) {
-        this.correr = correr;
+    public void setCorreo(String correr) {
+        this.correo = correr;
     }
 
     public String getPassword() {

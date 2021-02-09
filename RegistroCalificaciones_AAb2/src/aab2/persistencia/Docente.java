@@ -13,11 +13,13 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author LENOVO
+ * @author tania
  */
 @Entity
 @Table(name = "DOCENTE")
@@ -34,24 +36,38 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Docente implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
     @Column(name = "NOMBRES")
     private String nombres;
     @Id
     @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 10)
     @Column(name = "CEDULA")
     private String cedula;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 10)
     @Column(name = "CELULAR")
     private String celular;
     @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 50)
     @Column(name = "CORREO")
     private String correo;
     @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 30)
     @Column(name = "PASSWORD")
     private String password;
     @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 30)
     @Column(name = "PROVINCIA")
     private String provincia;
-    @Basic(optional = false)
+    @Size(max = 10)
     @Column(name = "TELEFONO")
     private String telefono;
 
@@ -62,12 +78,13 @@ public class Docente implements Serializable {
         this.cedula = cedula;
     }
 
-    public Docente(String cedula, String correo, String password, String provincia, String telefono) {
+    public Docente(String cedula, String nombres, String celular, String correo, String password, String provincia) {
         this.cedula = cedula;
+        this.nombres = nombres;
+        this.celular = celular;
         this.correo = correo;
         this.password = password;
         this.provincia = provincia;
-        this.telefono = telefono;
     }
 
     public String getNombres() {
