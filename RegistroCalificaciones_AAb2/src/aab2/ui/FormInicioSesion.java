@@ -65,10 +65,10 @@ public class FormInicioSesion extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
                         .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxtfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtfCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtxtfCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                            .addComponent(jtxtfContrasena))))
                 .addContainerGap(181, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -99,7 +99,7 @@ public class FormInicioSesion extends javax.swing.JFrame {
         
         if(ValidarCampos()){
             RepositorioDocente repo = new RepositorioDocente();
-            
+     
             Docente objDocente = new Docente();
             objDocente.setCorreo(jtxtfCorreo.getText());
             objDocente.setPassword(jtxtfContrasena.getText());
@@ -110,6 +110,7 @@ public class FormInicioSesion extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "INO PUDO INICIAR SESIÓN CORRECTAENTE, INTENTE ");
             }
         }
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
