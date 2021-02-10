@@ -13,7 +13,12 @@ public class IniciarSesion implements IIniciarSesión{
 
     @Override
     public boolean logueo(String correo, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (repositorio.iniciarSesion(correo, password)) {
+            return true;
+        }else{
+            return false;
+        }
+
     }
     
 }

@@ -13,7 +13,6 @@ public class LogeoPortCorreo {
     }
     
     public boolean logueo(String correo, String password){
-        System.out.println(":)");
-        return true;
+        return logeo.logueo(correo, password);
     }
 }

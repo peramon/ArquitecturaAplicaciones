@@ -97,13 +97,16 @@ public class FormInicioSesion extends javax.swing.JFrame {
         LogeoPortCorreo objAdaptadorLogeo = new LogeoPortCorreo(new IniciarSesion(objDoc), objDoc);
         
         if(ValidarCampos()){
+            RepositorioDocente repo = new RepositorioDocente();
+            
             Docente objDocente = new Docente();
             objDocente.setCorreo(jtxtfCorreo.getText());
             objDocente.setPassword(jtxtfContrasena.getText());
-            
             objAdaptadorLogeo.logueo(objDocente.getCorreo(), objDocente.getPassword());
             if( objAdaptadorLogeo.logueo(objDocente.getCorreo(), objDocente.getPassword())){
                 System.out.println("ok");
+            }else{
+                System.out.println("No se puede conectar");
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
